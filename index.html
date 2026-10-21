@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugues Israel | CopyForge - AI/ML & SaaS Copywriter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Inter, sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 15, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 0 24px; }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { display: flex; align-items: center; gap: 14px; }
+        .logo-icon { width: 52px; height: 52px; background: linear-gradient(135deg, #7c3aed, #2563eb); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: #fff; }
+        .logo-text { font-size: 1.7rem; font-weight: 800; color: #fff; }
+        .logo-text span { background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        nav { display: flex; align-items: center; gap: 32px; }
+        nav a { color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #fff; }
+        .nav-cta { background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.4); }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 0 80px; }
+        .hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; color: #a855f7; margin-bottom: 32px; width: fit-content; }
+        .hero-label .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .hero h1 .gradient { background: linear-gradient(135deg, #a855f7, #6366f1, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.25rem; color: #a0a0a0; max-width: 600px; margin-bottom: 40px; }
+        .cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn { padding: 16px 32px; border-radius: 12px; font-weight: 600; transition: all 0.3s; font-size: 1rem; }
+        .btn-primary { background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(124,58,237,0.35); }
+        .btn-secondary { border: 2px solid #333; color: #fff; }
+        .btn-secondary:hover { border-color: #7c3aed; background: rgba(124,58,237,0.1); }
+        .section { padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .section-label { color: #7c3aed; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; font-weight: 600; }
+        .section h2 { font-size: 2.5rem; margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
+        .section-intro { font-size: 1.1rem; color: #888; max-width: 600px; margin-bottom: 48px; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; transition: all 0.3s; }
+        .service-card:hover { border-color: rgba(124,58,237,0.5); background: rgba(124,58,237,0.05); transform: translateY(-4px); }
+        .service-icon { width: 48px; height: 48px; background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(37,99,235,0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; }
+        .service-card h3 { font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
+        .service-card p { color: #888; font-size: 0.95rem; margin-bottom: 20px; }
+        .service-price { font-size: 1.5rem; font-weight: 800; color: #a855f7; margin-bottom: 16px; }
+        .service-price span { font-size: 0.9rem; color: #666; font-weight: 400; }
+        .service-features { list-style: none; }
+        .service-features li { color: #aaa; font-size: 0.9rem; padding: 6px 0; display: flex; align-items: center; gap: 8px; }
+        .service-features li::before { content: ""; width: 6px; height: 6px; background: #7c3aed; border-radius: 50%; flex-shrink: 0; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-image { width: 100%; height: 400px; background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(37,99,235,0.1)); border-radius: 20px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.08); }
+        .about-image-text { font-size: 5rem; font-weight: 800; background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .about-text h3 { font-size: 1.5rem; margin-bottom: 16px; font-weight: 700; }
+        .about-text p { color: #888; margin-bottom: 24px; line-height: 1.8; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+        .stat-item { text-align: center; padding: 32px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; }
+        .stat-number { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+        .stat-label { color: #888; font-size: 0.9rem; }
+        .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .work-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; transition: all 0.3s; cursor: pointer; }
+        .work-item:hover { border-color: rgba(124,58,237,0.5); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .work-item h3 { font-size: 1.3rem; margin-bottom: 8px; font-weight: 700; }
+        .work-category { color: #7c3aed; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .email-preview { background: #0a0a0f; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+        .email-preview .subject { color: #a855f7; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .email-preview .body { color: #888; font-size: 0.85rem; line-height: 1.6; }
+        .view-sample { color: #7c3aed; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .view-sample:hover { color: #a855f7; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .testimonial-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; position: relative; }
+        .testimonial-card::before { content: "\201C"; font-size: 4rem; color: rgba(124,58,237,0.3); position: absolute; top: 16px; left: 24px; line-height: 1; }
+        .testimonial-text { color: #ccc; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; position: relative; z-index: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .author-avatar { width: 40px; height: 40px; background: linear-gradient(135deg, #7c3aed, #2563eb); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+        .author-name { font-weight: 600; font-size: 0.95rem; }
+        .author-role { color: #666; font-size: 0.85rem; }
+        .contact-content { max-width: 600px; }
+        .contact-content p { color: #888; margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8; }
+        .contact-email-large { font-size: 1.75rem; font-weight: 700; color: #fff; display: inline-block; margin-bottom: 32px; border-bottom: 2px solid rgba(124,58,237,0.5); padding-bottom: 4px; transition: all 0.3s; }
+        .contact-email-large:hover { color: #a855f7; border-color: #a855f7; }
+        .social-links { display: flex; gap: 16px; margin-top: 32px; }
+        .social-link { width: 48px; height: 48px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; font-size: 1.2rem; }
+        .social-link:hover { background: rgba(124,58,237,0.2); border-color: #7c3aed; transform: translateY(-2px); }
+        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 40px 0; text-align: center; }
+        footer p { color: #666; font-size: 0.9rem; }
+        footer a { color: #7c3aed; }
+        /* Hire form modal */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 24px; }
+        .modal-overlay.open { display: flex; }
+        .modal-box { background: #12121a; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; position: relative; }
+        .modal-box h3 { font-size: 1.6rem; margin-bottom: 8px; }
+        .modal-box .sub { color: #888; margin-bottom: 28px; font-size: 0.95rem; }
+        .modal-close { position: absolute; top: 18px; right: 22px; background: none; border: none; color: #888; font-size: 1.6rem; cursor: pointer; line-height: 1; }
+        .modal-close:hover { color: #fff; }
+        .field { margin-bottom: 18px; }
+        .field label { display: block; font-size: 0.85rem; font-weight: 600; color: #aaa; margin-bottom: 8px; }
+        .field input[type="text"], .field input[type="email"], .field select, .field textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 14px; color: #fff; font-family: inherit; font-size: 0.95rem; }
+        .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #7c3aed; }
+        .field textarea { resize: vertical; min-height: 90px; }
+        .field select option { background: #12121a; }
+        .checks { display: grid; gap: 10px; }
+        .check { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 11px 14px; cursor: pointer; font-size: 0.92rem; color: #ccc; }
+        .check input { accent-color: #7c3aed; width: 16px; height: 16px; }
+        .check:has(input:checked) { border-color: #7c3aed; background: rgba(124,58,237,0.1); }
+        .form-err { color: #f87171; font-size: 0.85rem; display: none; margin-bottom: 12px; }
+        .btn-gmail { width: 100%; padding: 15px; border: none; border-radius: 12px; background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; font-weight: 700; font-size: 1rem; cursor: pointer; font-family: inherit; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn-gmail:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(124,58,237,0.35); }
+        .form-note { margin-top: 14px; font-size: 0.8rem; color: #666; text-align: center; }
+        #toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px); background: #12121a; border: 1px solid rgba(124,58,235,0.5); color: #fff; padding: 14px 24px; border-radius: 12px; font-size: 0.9rem; opacity: 0; transition: all 0.35s; z-index: 3000; pointer-events: none; max-width: 90vw; }
+        #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        @media (max-width: 900px) { .services-grid, .testimonials-grid { grid-template-columns: 1fr; } .about-grid { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .work-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.2rem; } }
+        @media (max-width: 600px) { nav { display: none; } .hero h1 { font-size: 1.8rem; } .stats-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">CF</div>
+                <div class="logo-text"><span>CopyForge</span></div>
+            </a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#" class="nav-cta" onclick="openHire(); return false;">Hire Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">
+                <span class="dot"></span> Available for new projects
+            </div>
+            <h1>I help <span class="gradient">AI & SaaS companies</span> turn readers into customers with emails that actually convert.</h1>
+            <p>Short. Punchy. Profitable copy that gets opened, clicked, and drives real revenue. Specializing in email marketing, landing pages, and cold outreach for tech startups.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary" onclick="openHire(); return false;">Start a Project</a>
+                <a href="#work" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="services">
+        <div class="container">
+            <p class="section-label">Services</p>
+            <h2>What I Can Do For You</h2>
+            <p class="section-intro">From first click to final purchase - I write the words that move your audience forward.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">@</div>
+                    <h3>Email Marketing Sequences</h3>
+                    <p>Welcome series, abandoned cart emails, newsletters, and promotional campaigns that convert.</p>
+                    <div class="service-price">$500 <span>/ sequence</span></div>
+                    <ul class="service-features">
+                        <li>5-email welcome sequence</li>
+                        <li>Abandoned cart recovery</li>
+                        <li>Newsletter templates</li>
+                        <li>A/B subject line testing</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">~</div>
+                    <h3>Landing Page Copy</h3>
+                    <p>Homepages, product pages, and landing pages that turn visitors into paying customers.</p>
+                    <div class="service-price">$300 <span>/ page</span></div>
+                    <ul class="service-features">
+                        <li>Hero headline + subheadline</li>
+                        <li>Feature descriptions</li>
+                        <li>CTA copy optimization</li>
+                        <li>Social proof elements</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&gt;</div>
+                    <h3>Cold Outreach</h3>
+                    <p>Cold emails and LinkedIn outreach that get responses and book meetings with your ideal clients.</p>
+                    <div class="service-price">$400 <span>/ campaign</span></div>
+                    <ul class="service-features">
+                        <li>Research-backed targeting</li>
+                        <li>Personalized sequences</li>
+                        <li>Follow-up strategy</li>
+                        <li>Reply rate optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="about">
+        <div class="container">
+            <p class="section-label">About</p>
+            <h2>Why Work With Me?</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-text">HI</div>
+                </div>
+                <div class="about-text">
+                    <h3>Your words should work as hard as your product.</h3>
+                    <p>I am Hugues Israel - a freelance copywriter specializing in AI/ML technology and SaaS productivity tools. I write short, punchy copy that cuts through the noise and gets results.</p>
+                    <p>Whether it is a welcome email that gets opened, a landing page that converts, or a cold outreach that gets replied to - I make sure every word earns its place on the page. No fluff. No filler. Just copy that sells.</p>
+                    <p>I focus on tech startups because this is where great copy makes the biggest difference. AI and SaaS companies are competing for attention in crowded markets. The right words can be the difference between a visitor bouncing and a customer converting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background: rgba(124,58,237,0.03); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">48h</div>
+                    <div class="stat-label">Avg. Delivery Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="work">
+        <div class="container">
+            <p class="section-label">Portfolio</p>
+            <h2>Selected Work</h2>
+            <p class="section-intro">A glimpse of my recent email and copy projects for AI and SaaS companies.</p>
+            <div class="work-grid">
+                <div class="work-item">
+                    <h3>Welcome Series - AI Writing Assistant</h3>
+                    <p class="work-category">Email Sequence - AI/ML</p>
+                    <div class="email-preview">
+                        <span class="subject">Subject: Your first 60 seconds with our AI</span>
+                        <span class="body">Most AI tools overpromise. They sound cool in demos. Then you actually use them.<br><br>[Product] is different. Not because of the tech. Because of how we built it.<br><br>Here is what happens in your first minute...</span></div><a href="../samples/campaign-1-ai-welcome.md" class="view-sample">View full sample &rarr;</a>
+                </div>
+                <div class="work-item">
+                    <h3>Launch Campaign - Productivity Dashboard</h3>
+                    <p class="work-category">Email Sequence - SaaS</p>
+                    <div class="email-preview">
+                        <span class="subject">Subject: We fixed the productivity problem</span>
+                        <span class="body">You do not have a productivity problem. You have a "too many tabs, too little time" problem.<br><br>[Product] brings everything together - tasks, docs, emails, calendar. One place. Zero chaos.<br><br>Launch special: 3 months free...</span></div><a href="../samples/campaign-2-saas-launch.md" class="view-sample">View full sample &rarr;</a>
+                </div>
+                <div class="work-item">
+                    <h3>Re-engagement - ML Platform</h3>
+                    <p class="work-category">Email Campaign - AI/ML</p>
+                    <div class="email-preview">
+                        <span class="subject">Subject: Still there?</span>
+                        <span class="body">Hey [Name], you signed up 47 days ago. Created your account. Ran one test.<br><br>And then... nothing. We get it. New tools are shiny. Then life happens.<br><br>But your ML models are still waiting...</span></div><a href="../samples/campaign-4-reengagement.md" class="view-sample">View full sample &rarr;</a>
+                </div>
+                <div class="work-item">
+                    <h3>Cold Outreach - AI Coding Assistant</h3>
+                    <p class="work-category">Cold Email - AI/ML</p>
+                    <div class="email-preview">
+                        <span class="subject">Subject: Your code review just got faster</span>
+                        <span class="body">[First Name], your PRs are sitting for 2 days. Bugs ship. Features wait. Your team moves slower than it should.<br><br>[Product] automates code review with AI. 80% of issues caught before human review.<br><br>Worth a 10-minute call?</span></div><a href="../samples/campaign-3-cold-outreach.md" class="view-sample">View full sample &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="testimonials">
+        <div class="container">
+            <p class="section-label">Testimonials</p>
+            <h2>What Clients Say</h2>
+            <p class="section-intro">Do not just take my word for it - here is what clients have to say about working with me.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Hugues delivered exactly what we needed. Our welcome email open rate went up 40% after implementing his sequence. Will definitely work together again.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div>
+                            <div class="author-name">Sarah Kim</div>
+                            <div class="author-role">CMO, TechFlow AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Short, punchy, and exactly what our audience responds to. Hugues understood our product in one call and delivered copy that actually converts.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <div class="author-name">Marcus Reid</div>
+                            <div class="author-role">Founder, DataSync</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Our cold outreach response rate tripled after switching to Hugues copy. He knows exactly how to grab attention in a crowded inbox.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LP</div>
+                        <div>
+                            <div class="author-name">Lisa Park</div>
+                            <div class="author-role">Head of Growth, CloudBase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <div class="container">
+            <p class="section-label">Get In Touch</p>
+            <h2>Ready to work together?</h2>
+            <div class="contact-content">
+                <p>Whether you need email campaigns, landing page copy, or full SaaS messaging - I am here to help. Currently accepting new clients and ready to start your next project.</p>
+                <div style="margin-bottom: 20px;">
+                    <button class="btn btn-primary" onclick="contactGmail()">Contact Me &rarr;</button>
+                </div>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 32px;">Opens a Gmail message ready to send to me. Or email directly: <a href="mailto:ishu031@gmail.com" style="color: #a855f7;">ishu031@gmail.com</a></p>
+                <div>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 12px;">Or find me on:</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">in</a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">X</a>
+                        <a href="https://github.com" target="_blank" class="social-link" title="GitHub">gh</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <a href="#">Hugues Israel</a> - <a href="#">CopyForge</a> | AI/ML & SaaS Copywriter</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="hire-modal" onclick="if(event.target===this)closeHire()">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeHire()" aria-label="Close">&times;</button>
+            <h3>Start a project</h3>
+            <p class="sub">Tell me about your project - on submit, my AI agents start drafting right away. You will hear back within 24 hours.</p>
+            <div class="field">
+                <label for="h-name">Your name *</label>
+                <input type="text" id="h-name" placeholder="Jane Founder">
+            </div>
+            <div class="field">
+                <label for="h-email">Your email *</label>
+                <input type="email" id="h-email" placeholder="jane@company.com">
+            </div>
+            <div class="field">
+                <label for="h-company">Company</label>
+                <input type="text" id="h-company" placeholder="Acme AI">
+            </div>
+            <div class="field">
+                <label>Services you need *</label>
+                <div class="checks">
+                    <label class="check"><input type="checkbox" class="svc" value="email_sequence"> Email Marketing Sequence - $500</label>
+                    <label class="check"><input type="checkbox" class="svc" value="landing_page"> Landing Page Copy - $300</label>
+                    <label class="check"><input type="checkbox" class="svc" value="cold_outreach"> Cold Outreach Campaign - $400</label>
+                    <label class="check"><input type="checkbox" class="svc" value="seo_audit"> SEO Content Audit &amp; Plan - $350</label>
+                </div>
+            </div>
+            <div class="field">
+                <label for="h-budget">Budget</label>
+                <select id="h-budget">
+                    <option value="Not specified">Select a range (optional)</option>
+                    <option>Under $500</option>
+                    <option>$500 - $1,000</option>
+                    <option>$1,000 - $2,000</option>
+                    <option>$2,000+</option>
+                    <option>Not sure yet</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="h-style">Landing page style (optional)</label>
+                <select id="h-style">
+                    <option value="">Let the agent choose</option>
+                    <option value="polsia">Modern dark</option>
+                    <option value="aurora">Clean light</option>
+                    <option value="brutalist">Bold brutalist</option>
+                    <option value="executive">Executive classic</option>
+                    <option value="neon">Cyber neon</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="h-tone">Voice (optional)</label>
+                <select id="h-tone">
+                    <option value="">Let the agent choose</option>
+                    <option value="punchy">Punchy</option>
+                    <option value="warm">Warm</option>
+                    <option value="corporate">Corporate</option>
+                    <option value="playful">Playful</option>
+                    <option value="technical">Technical</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="h-msg">Project details *</label>
+                <textarea id="h-msg" rows="4" placeholder="What are you launching, who is it for, and when do you need it?"></textarea>
+            </div>
+            <div style="position:absolute;left:-10000px;top:auto;overflow:hidden;" aria-hidden="true">
+                <label for="h-website">Leave this field empty</label>
+                <input type="text" id="h-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-err" id="h-err"></div>
+            <button class="btn-gmail" id="h-submit" onclick="sendHire()">Submit</button>
+            <p class="form-note">Your request goes straight into my drafting pipeline. No spam, no reselling - ever.</p>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+    var MY_EMAIL = 'ishu031@gmail.com';
+    // Local dev (static server/file): localhost dashboard.
+    // Served by the dashboard or the ngrok tunnel: same origin.
+    // GitHub Pages or any other host: cross-origin intake via the permanent tunnel —
+    // the tunnel's interstitial only fronts HTML page views; JSON API posts pass clean.
+    var TUNNEL = 'https://squeeze-ranging-unfold.ngrok-free.dev';
+    var isLocal = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '';
+    var onTunnel = location.hostname.indexOf('.ngrok-free.dev') !== -1;
+    var API_BASE = isLocal ? 'http://127.0.0.1:8765' : (onTunnel ? '' : TUNNEL);
+
+    function openHire() {
+        document.getElementById('hire-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('h-err').style.display = 'none';
+        setTimeout(function() { document.getElementById('h-name').focus(); }, 50);
+    }
+    function closeHire() {
+        document.getElementById('hire-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    function toast(msg) {
+        var t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(function() { t.classList.remove('show'); }, 5000);
+    }
+    function gmailCompose(subject, body) {
+        return 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(MY_EMAIL)
+             + '&su=' + encodeURIComponent(subject)
+             + '&body=' + encodeURIComponent(body);
+    }
+    function contactGmail() {
+        window.open(gmailCompose('Project inquiry via your portfolio',
+            'Hi Hugues,\n\nI found your portfolio and would like to discuss a project.\n\n'),
+            '_blank');
+        toast('Gmail compose opened - press Send and I will reply within 24 hours.');
+    }
+    function sendHire() {
+        var name = document.getElementById('h-name').value.trim();
+        var email = document.getElementById('h-email').value.trim();
+        var company = document.getElementById('h-company').value.trim();
+        var budget = document.getElementById('h-budget').value;
+        var style = document.getElementById('h-style').value;
+        var tone = document.getElementById('h-tone').value;
+        var msg = document.getElementById('h-msg').value.trim();
+        var err = document.getElementById('h-err');
+        var services = [];
+        var boxes = document.querySelectorAll('.svc');
+        for (var i = 0; i < boxes.length; i++) { if (boxes[i].checked) services.push(boxes[i].value); }
+
+        if (!name || !email || !msg) { err.textContent = 'Please fill in your name, email, and project details.'; err.style.display = 'block'; return; }
+        if (!services.length) { err.textContent = 'Please pick at least one service.'; err.style.display = 'block'; return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'That email address does not look right.'; err.style.display = 'block'; return; }
+        err.style.display = 'none';
+
+        var btn = document.getElementById('h-submit');
+        btn.disabled = true; btn.textContent = 'Submitting...';
+
+        fetch(API_BASE + '/api/inquiries', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name, email: email, company: company,
+                services: services, budget: (budget === 'Not specified' ? '' : budget),
+                style: style, tone: tone,
+                website: document.getElementById('h-website').value,
+                details: msg
+            })
+        })
+        .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
+        .then(function(res) {
+            btn.disabled = false; btn.textContent = 'Submit';
+            if (!res.ok) {
+                err.textContent = res.data.detail || 'Something went wrong - please try again or email directly.';
+                err.style.display = 'block';
+                return;
+            }
+            closeHire();
+            if (res.data.status === 'overflow') {
+                toast('All agent slots are busy right now - your request went straight to Hugues personally. You will hear back soon.');
+            } else {
+                toast('Submitted! The agents are already drafting your project - you will hear back within 24 hours.');
+            }
+            document.getElementById('h-name').value = '';
+            document.getElementById('h-email').value = '';
+            document.getElementById('h-company').value = '';
+            document.getElementById('h-msg').value = '';
+            for (var j = 0; j < boxes.length; j++) { boxes[j].checked = false; }
+            document.getElementById('h-budget').selectedIndex = 0;
+            document.getElementById('h-style').selectedIndex = 0;
+            document.getElementById('h-tone').selectedIndex = 0;
+        })
+        .catch(function() {
+            btn.disabled = false; btn.textContent = 'Submit';
+            err.textContent = 'Could not reach the drafting system - please try again in a moment or email ishu031@gmail.com directly.';
+            err.style.display = 'block';
+        });
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeHire(); });
+    </script>
+</body>
+</html>
