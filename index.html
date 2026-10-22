@@ -68,6 +68,23 @@
         .email-preview .body { color: #888; font-size: 0.85rem; line-height: 1.6; }
         .view-sample { color: #7c3aed; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
         .view-sample:hover { color: #a855f7; }
+        .work-item.static { cursor: default; }
+        .work-item.static:hover { transform: none; box-shadow: none; }
+        .case-badge { display: inline-block; background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4); color: #4ade80; font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 50px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .case-stats { display: flex; gap: 20px; flex-wrap: wrap; margin: 14px 0 18px; }
+        .case-stat b { display: block; font-size: 1.2rem; color: #fff; font-weight: 800; }
+        .case-stat span { color: #888; font-size: 0.78rem; }
+        .case-link { color: #7c3aed; font-weight: 600; font-size: 0.95rem; }
+        .case-link:hover { color: #a855f7; }
+        details.sample { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 14px; padding-top: 12px; }
+        details.sample summary { color: #7c3aed; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+        details.sample[open] summary { margin-bottom: 4px; }
+        .sample-block { background: #0a0a0f; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; margin-top: 12px; }
+        .sample-block h4 { color: #a855f7; font-size: 0.82rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .sample-block p { color: #999; font-size: 0.83rem; line-height: 1.6; white-space: pre-wrap; margin-bottom: 8px; }
+        .sample-block p:last-child { margin-bottom: 0; }
+        .sample-block .lbl { color: #a855f7; font-weight: 600; }
+        .sample-note { color: #666; font-size: 0.78rem; font-style: italic; margin-top: 12px; }
         .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .testimonial-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px; position: relative; }
         .testimonial-card::before { content: "\201C"; font-size: 4rem; color: rgba(124,58,237,0.3); position: absolute; top: 16px; left: 24px; line-height: 1; }
@@ -232,35 +249,214 @@
         <div class="container">
             <p class="section-label">Portfolio</p>
             <h2>Selected Work</h2>
-            <p class="section-intro">A glimpse of my recent email and copy projects for AI and SaaS companies.</p>
+            <p class="section-intro">One live client project and three full-length samples. Every word below came out of the pipeline and passed review before showing up here.</p>
             <div class="work-grid">
-                <div class="work-item">
-                    <h3>Welcome Series - AI Writing Assistant</h3>
-                    <p class="work-category">Email Sequence - AI/ML</p>
+                <div class="work-item static">
+                    <span class="case-badge">Live client work</span>
+                    <h3>LexAI — AI compliance platform</h3>
+                    <p class="work-category">Landing Page Sprint - Client project</p>
                     <div class="email-preview">
-                        <span class="subject">Subject: Your first 60 seconds with our AI</span>
-                        <span class="body">Most AI tools overpromise. They sound cool in demos. Then you actually use them.<br><br>[Product] is different. Not because of the tech. Because of how we built it.<br><br>Here is what happens in your first minute...</span></div><a href="../samples/campaign-1-ai-welcome.md" class="view-sample">View full sample &rarr;</a>
+                        <span class="subject">Headline: The AI that governs itself.</span>
+                        <span class="body">Full landing page written from a portfolio inquiry, human-reviewed, quote &rarr; paid &rarr; approved &rarr; delivered &rarr; published — the whole loop, one sitting.</span>
+                    </div>
+                    <div class="case-stats">
+                        <div class="case-stat"><b>$300</b><span>Page Sprint</span></div>
+                        <div class="case-stat"><b>Same night</b><span>brief to live page</span></div>
+                        <div class="case-stat"><b>Human-approved</b><span>nothing auto-shipped</span></div>
+                    </div>
+                    <a class="case-link" href="https://Hugoe031.github.io/copyforge-site/p/20261021-025310-acme-ai-landing_page/" target="_blank" rel="noopener">View the live page &rarr;</a>
                 </div>
-                <div class="work-item">
-                    <h3>Launch Campaign - Productivity Dashboard</h3>
+                <div class="work-item static">
+                    <h3>Relay — 5-email nurture sequence</h3>
                     <p class="work-category">Email Sequence - SaaS</p>
                     <div class="email-preview">
-                        <span class="subject">Subject: We fixed the productivity problem</span>
-                        <span class="body">You do not have a productivity problem. You have a "too many tabs, too little time" problem.<br><br>[Product] brings everything together - tasks, docs, emails, calendar. One place. Zero chaos.<br><br>Launch special: 3 months free...</span></div><a href="../samples/campaign-2-saas-launch.md" class="view-sample">View full sample &rarr;</a>
+                        <span class="subject">Subject: Standups cost your team 15 hours/month</span>
+                        <span class="body">Daily standups at 9 AM force half your team to join at 4 AM—or skip entirely. Either way, someone misses context...</span>
+                    </div>
+                    <details class="sample">
+                        <summary>Read the full sequence (strategy + 5 emails)</summary>
+                        <div class="sample-block">
+                            <h4>Strategy</h4>
+                            <p><span class="lbl">Goal:</span> Get engineering managers to start a free 14-day trial of Relay by reframing async standups as a focus-time win.
+<span class="lbl">Reader:</span> Engineering managers at 20-100 person remote companies. They lose 15+ hours/month to daily sync overhead and timezone conflicts.
+<span class="lbl">Offer:</span> Free 14-day trial, no credit card required. Teams keep their existing tools—no migration.
+<span class="lbl">Tone:</span> Direct, empathetic, engineer-to-engineer. No buzzwords. Lead with the time saved.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Email 1 — Day 0: Introduction</h4>
+                            <p><span class="lbl">Subject:</span> Standups cost your team 15 hours/month
+<span class="lbl">Preview:</span> Async replaces them. No credit card needed.
+
+Daily standups at 9 AM force half your team to join at 4 AM—or skip entirely. Either way, someone misses context.
+
+You're burning 15+ hours/month stitching together what your team actually shipped. That's 180 hours/year of lost flow state.
+
+Relay replaces daily syncs with one weekly async digest. Your team posts updates on their schedule. You get the full picture without the meeting.
+
+<span class="lbl">CTA:</span> Start your free 14-day trial—no credit card required.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Email 2 — Day 2: Value</h4>
+                            <p><span class="lbl">Subject:</span> The 3-line async update that works
+<span class="lbl">Preview:</span> Cut meeting time without losing context.
+
+Most async standups fail because people write novels. The fix: three lines only.
+
+1. What I shipped yesterday.
+2. What I'm tackling today.
+3. Where I'm blocked.
+
+Engineers actually fill these out. You actually read them. No 30-minute meeting needed.
+
+Relay enforces this format automatically. Your team gets 3+ hours of focus time back each week—no coordination required.
+
+<span class="lbl">CTA:</span> Try Relay free for 14 days, no credit card needed.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Email 3 — Day 4: Social proof</h4>
+                            <p><span class="lbl">Subject:</span> How Patchcut cut 5 hours of meetings/week
+<span class="lbl">Preview:</span> A real team's async results.
+
+Patchcut, a 45-person dev shop in Lisbon, ran daily standups across 6 time zones. Engineers in Tokyo joined at midnight.
+
+After switching to Relay: 5 fewer meeting hours per engineer per week. Zero timezone complaints.
+
+"We replaced 5 meetings with one 2-minute read," says Sofia, their engineering lead. "My team actually looks forward to standup day now."
+
+Their secret: Relay's weekly digest bundles all updates into one Slack thread. No context switching. No scheduling.
+
+<span class="lbl">CTA:</span> Start your free 14-day trial—no credit card required.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Email 4 — Day 6: Objection</h4>
+                            <p><span class="lbl">Subject:</span> Still using Zoom standups? Here's why
+<span class="lbl">Preview:</span> Switching costs less than you think.
+
+"We can't switch—we use Zoom and Jira already." Sound familiar?
+
+Relay integrates with Slack, Microsoft Teams, and Jira. Your team posts updates in the tools they already use. No new app. No training.
+
+Most teams are fully switched in under 30 minutes. Your first digest goes out the same day.
+
+Still not convinced? Keep your current standups. Use Relay for free for 14 days. No credit card. No commitment.
+
+<span class="lbl">CTA:</span> Start free 14-day trial—no credit card needed.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Email 5 — Day 8: Close</h4>
+                            <p><span class="lbl">Subject:</span> Last chance: free Relay trial ends
+<span class="lbl">Preview:</span> Your team's weekly digest starts today.
+
+Your 14-day trial expires tonight. After today, Relay reverts to the free tier (1 team, 5 members max).
+
+If you manage 6+ engineers, you'll lose access to async standups, timezone-smart digests, and Jira/Slack integrations.
+
+Teams on paid plans save an average of 5 hours/employee/week. That's 200+ hours/year per engineer—back in flow state.
+
+<span class="lbl">CTA:</span> Claim your team's free 14-day trial before midnight.</p>
+                        </div>
+                        <p class="sample-note">Demonstration sample. Company names and figures inside are illustrative placeholders — live deliverables get real claims from your brief.</p>
+                    </details>
                 </div>
-                <div class="work-item">
-                    <h3>Re-engagement - ML Platform</h3>
-                    <p class="work-category">Email Campaign - AI/ML</p>
+                <div class="work-item static">
+                    <h3>MetricFox — 3-touch cold outreach</h3>
+                    <p class="work-category">Cold Outreach - B2B SaaS</p>
                     <div class="email-preview">
-                        <span class="subject">Subject: Still there?</span>
-                        <span class="body">Hey [Name], you signed up 47 days ago. Created your account. Ran one test.<br><br>And then... nothing. We get it. New tools are shiny. Then life happens.<br><br>But your ML models are still waiting...</span></div><a href="../samples/campaign-4-reengagement.md" class="view-sample">View full sample &rarr;</a>
+                        <span class="subject">Subject: New feature launched. Which changes drove it?</span>
+                        <span class="body">Your dashboard is buzzing — but which of your new features actually moved the needle? MetricFox runs AI anomaly detection on your launch metrics...</span>
+                    </div>
+                    <details class="sample">
+                        <summary>Read the full sequence (strategy + 3 touches + LinkedIn note)</summary>
+                        <div class="sample-block">
+                            <h4>Strategy</h4>
+                            <p><span class="lbl">Persona:</span> Heads of Product at B2B SaaS companies who just shipped a major feature launch.
+<span class="lbl">Pain:</span> Dashboards show movement but nobody knows which changes actually caused it.
+<span class="lbl">Offer:</span> Free anomaly monitoring set up on their launch metrics.
+<span class="lbl">Why now:</span> Post-launch is when metric drift hides bugs and missed opportunities.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Touch 1 — Day 0</h4>
+                            <p><span class="lbl">Subject:</span> New feature launched. Which changes drove it?
+
+Your dashboard is buzzing — but which of your new features actually moved the needle? MetricFox runs AI anomaly detection on your launch metrics and flags the real drivers within 24 hours. Zero setup for you.
+
+<span class="lbl">CTA:</span> Can I wire up free anomaly monitoring on your launch metrics today?</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Touch 2 — Day 3</h4>
+                            <p><span class="lbl">Subject:</span> The 3 metrics hiding your post-launch bugs
+
+Most teams miss 40% of post-launch issues because they track symptoms, not root causes. MetricFox correlates every event in your stack to surface anomalies you'd otherwise miss.
+
+<span class="lbl">CTA:</span> Want a 24-hour anomaly scan of your launch metrics?</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Touch 3 — Day 7: Break-up</h4>
+                            <p><span class="lbl">Subject:</span> Last try — anomaly monitoring still open
+
+I'm closing the free anomaly monitoring offer this week. If you'd rather chase ghosts in your dashboard than pinpoint real drivers, no worries.
+
+<span class="lbl">CTA:</span> Still want anomaly monitoring on your launch metrics?</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>LinkedIn connection note</h4>
+                            <p>Just shipped a major feature — congrats! Post-launch dashboards are noisy; figuring out what actually drove the movement is a whole other challenge. Happy to swap notes if that's on your radar.</p>
+                        </div>
+                        <p class="sample-note">Demonstration sample. Figures inside are illustrative — live deliverables get real claims from your brief.</p>
+                    </details>
                 </div>
-                <div class="work-item">
-                    <h3>Cold Outreach - AI Coding Assistant</h3>
-                    <p class="work-category">Cold Email - AI/ML</p>
+                <div class="work-item static">
+                    <h3>Relay — research-driven landing page</h3>
+                    <p class="work-category">Landing Page - AI-drafted, human-reviewed</p>
                     <div class="email-preview">
-                        <span class="subject">Subject: Your code review just got faster</span>
-                        <span class="body">[First Name], your PRs are sitting for 2 days. Bugs ship. Features wait. Your team moves slower than it should.<br><br>[Product] automates code review with AI. 80% of issues caught before human review.<br><br>Worth a 10-minute call?</span></div><a href="../samples/campaign-3-cold-outreach.md" class="view-sample">View full sample &rarr;</a>
+                        <span class="subject">Headline: Stop daily standups. Ship code instead.</span>
+                        <span class="body">Written by the copywriter agent after fetching a real reference site for tone — strategy brief first, then sections, then validation. One of three services the pipeline drafts today.</span>
+                    </div>
+                    <details class="sample">
+                        <summary>Read the full page copy</summary>
+                        <div class="sample-block">
+                            <h4>Hero</h4>
+                            <p><span class="lbl">Headline:</span> Stop daily standups. Ship code instead.
+<span class="lbl">Subhead:</span> Relay replaces exhausting meetings with one weekly async digest for remote engineering teams.
+<span class="lbl">CTA:</span> Start Free Trial</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Benefits</h4>
+                            <p><span class="lbl">- Replaces daily standups permanently</span>
+Say goodbye to morning syncs that break engineering flow. Your team updates progress on their own schedule.
+
+<span class="lbl">- One weekly async digest</span>
+Get a clean, structured summary of what shipped and what is blocked every Friday afternoon.
+
+<span class="lbl">- Built for remote engineering teams</span>
+Keep distributed developers aligned without scheduling another calendar invite across time zones.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>How it works</h4>
+                            <p>1. Start your free trial with zero friction. No credit card required. Connect your GitHub and team Slack in under two minutes.
+
+2. Engineers log updates asynchronously. Relay collects project progress, pull requests, and blockers automatically throughout the week.
+
+3. Receive your weekly digest. Engineering managers get one clean summary every Friday, replacing every daily meeting.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>FAQ</h4>
+                            <p><span class="lbl">Q:</span> How does Relay replace daily standups?
+<span class="lbl">A:</span> Relay replaces synchronous morning meetings with automated asynchronous check-ins. Team members share progress on their own time, and you get a single consolidated digest.
+
+<span class="lbl">Q:</span> Do I need a credit card to start the trial?
+<span class="lbl">A:</span> No. You get a free 14-day trial with full access to all features. No credit card required upfront.
+
+<span class="lbl">Q:</span> Is Relay built specifically for engineering teams?
+<span class="lbl">A:</span> Yes. Relay integrates directly with developer workflows, tracking pull requests, milestones, and blockers tailored for remote engineering managers.</p>
+                        </div>
+                        <div class="sample-block">
+                            <h4>Final CTA</h4>
+                            <p><span class="lbl">Line:</span> Stop wasting hours in daily standups. Start your free 14-day trial today.
+<span class="lbl">CTA:</span> Start Free Trial</p>
+                        </div>
+                        <p class="sample-note">Testimonials in delivered pages are marked [Name]/[Company] placeholders until the client supplies real quotes — we never invent customer stories for live work.</p>
+                    </details>
                 </div>
             </div>
         </div>
@@ -268,40 +464,8 @@
     <section class="section" id="testimonials">
         <div class="container">
             <p class="section-label">Testimonials</p>
-            <h2>What Clients Say</h2>
-            <p class="section-intro">Do not just take my word for it - here is what clients have to say about working with me.</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Hugues delivered exactly what we needed. Our welcome email open rate went up 40% after implementing his sequence. Will definitely work together again.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SK</div>
-                        <div>
-                            <div class="author-name">Sarah Kim</div>
-                            <div class="author-role">CMO, TechFlow AI</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Short, punchy, and exactly what our audience responds to. Hugues understood our product in one call and delivered copy that actually converts.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div>
-                            <div class="author-name">Marcus Reid</div>
-                            <div class="author-role">Founder, DataSync</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Our cold outreach response rate tripled after switching to Hugues copy. He knows exactly how to grab attention in a crowded inbox.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LP</div>
-                        <div>
-                            <div class="author-name">Lisa Park</div>
-                            <div class="author-role">Head of Growth, CloudBase</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2>References on request</h2>
+            <p class="section-intro">Client quotes are being collected from live projects — none are published until a real client says them. Ask for a reference when you get in touch; verified, clickable work is above instead.</p>
         </div>
     </section>
     <section class="section" id="contact">
