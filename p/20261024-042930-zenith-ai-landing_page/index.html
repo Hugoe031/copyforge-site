@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zenith AI Landing Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent1:hsl(347,78%,56%);
+  --accent2:hsl(35,78%,56%);
+  --primary-bg:#f7f7f7;
+  --text:#111;
+  --text-muted:#555;
+}
+body{font-family:'Inter',sans-serif;background:var(--primary-bg);color:var(--text);margin:0;padding:0;}
+header{background:#fff;padding:1rem;box-shadow:0 1px 5px rgba(0,0,0,.1);position:sticky;top:0;z-index:100;}
+h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:700;}
+header a{font-size:1.5rem;color:var(--accent1);text-decoration:none;}
+.hero{position:relative;text-align:center;padding:4rem 2rem;background:#fff;overflow:hidden;min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+.hero::after{content:"";position:absolute;top:0;left:-50%;width:200%;height:200%;background:radial-gradient(circle at top left, var(--accent1), transparent 70%);opacity:.25;transform:rotate(45deg);pointer-events:none;}
+.hero h1{font-size:2.5rem;margin-bottom:1rem;color:var(--accent2);}
+.hero p{font-size:1.25rem;margin-bottom:2rem;max-width:600px;}
+.btn{display:inline-block;padding:.75rem 1.5rem;font-weight:600;text-decoration:none;border-radius:4px;transition:background .3s,color .3s;}
+.btn-primary{background:var(--accent1);color:#fff;}
+.btn-primary:hover{background:hsl(347,78%,46%);}
+.btn-secondary{background:var(--accent2);color:#fff;}
+.btn-secondary:hover{background:hsl(35,78%,46%);}
+section{padding:2rem 1rem;max-width:1200px;margin:auto;}
+.section-heading{margin-bottom:1.5rem;}
+ul{list-style:none;padding:0;}
+ul li{margin-bottom:1.5rem;}
+ul li h3{font-size:1.25rem;margin-bottom:.5rem;}
+ul li p{color:var(--text-muted);}
+.social-proof blockquote{background:#fff;padding:1rem;border-left:4px solid var(--accent2);margin-bottom:1.5rem;}
+.social-proof cite{display:block;margin-top:.5rem;font-style:normal;color:var(--text-muted);}
+.faq dt{font-weight:600;margin-top:1rem;}
+.faq dd{margin-left:0;margin-bottom:1rem;color:var(--text-muted);}
+@media(min-width:768px){
+  .hero h1{font-size:3rem;}
+  .hero p{font-size:1.5rem;}
+  .btn{padding:1rem 2rem;}
+  section{padding:4rem 2rem;}
+}
+footer{text-align:center;padding:1rem;font-size:.9rem;color:var(--text-muted);border-top:1px solid #ddd;}
+</style>
+</head>
+<body>
+<header id="top">
+  <a href="#top">Zenith AI</a>
+</header>
+<main>
+  <section class="hero">
+    <h1>Fresh AI Insights, Fresh Growth</h1>
+    <p>Discover daily AI trends that keep your startup ahead and your ideas fresh.</p>
+    <a href="#cta" class="btn btn-primary">Start Free</a>
+  </section>
+
+  <section id="benefits">
+    <h2 class="section-heading">Benefits</h2>
+    <ul>
+      <li>
+        <h3>Lightning‑fast insights</h3>
+        <p>Stay ahead with real‑time AI updates.</p>
+      </li>
+      <li>
+        <h3>Uncluttered design</h3>
+        <p>Navigate trends without overwhelm.</p>
+      </li>
+      <li>
+        <h3>Intuitive UX</h3>
+        <p>Consume content in seconds.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="how-it-works">
+    <h2 class="section-heading">How It Works</h2>
+    <ol>
+      <li>Sign up with 1 click.</li>
+      <li>Feed your interests.</li>
+      <li>Get daily AI briefs in minutes.</li>
+    </ol>
+  </section>
+
+  <section id="social-proof">
+    <h2 class="section-heading">Social Proof</h2>
+    <blockquote>
+      Game‑changing insights every day.
+      <cite>[Alice, Startup CEO]</cite>
+    </blockquote>
+    <blockquote>
+      The easiest way to stay on top of AI.
+      <cite>[Bob, Product Lead]</cite>
+    </blockquote>
+    <blockquote>
+      No clutter, just pure value.
+      <cite>[Carol, Growth Manager]</cite>
+    </blockquote>
+  </section>
+
+  <section id="faq">
+    <h2 class="section-heading">FAQ</h2>
+    <dl class="faq">
+      <dt>Q: How often is content updated?</dt>
+      <dd>A: Daily, as new AI breakthroughs emerge.</dd>
+      <dt>Q: Is the platform free?</dt>
+      <dd>A: Yes, start with a 14‑day free trial.</dd>
+      <dt>Q: Can I customize topics?</dt>
+      <dd>A: Absolutely, tailor your feed to your interests.</dd>
+    </dl>
+  </section>
+
+  <section id="cta">
+    <h2>Ready to lead with fresh AI insights?</h2>
+    <a href="#top" class="btn btn-secondary">Get Started</a>
+  </section>
+</main>
+
+<footer>
+  Rendered by CopyForge
+</footer>
+</body>
+</html>
