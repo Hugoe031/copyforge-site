@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ledgerly – AI Bookkeeping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent1:hsl(116,78%,56%);
+  --accent2:hsl(164,78%,56%);
+  --bg-light:#f9fafb;
+  --text-dark:#111;
+  --text-secondary:#555;
+  --border:#eee;
+  --spacing:1rem;
+}
+body{
+  margin:0;
+  font-family:"Open Sans",sans-serif;
+  color:var(--text-dark);
+  background:var(--bg-light);
+  line-height:1.6;
+}
+header{
+  background:var(--accent1);
+  color:#fff;
+  padding:var(--spacing);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+main{
+  padding:var(--spacing) 1rem;
+}
+section{
+  margin:var(--spacing) 0;
+}
+h1,h2,h3{
+  font-family:"Montserrat",sans-serif;
+  margin-bottom:0.5rem;
+}
+h1{font-size:2.5rem;}
+h2{font-size:2rem;}
+h3{font-size:1.5rem;}
+.hero{
+  position:relative;
+  text-align:center;
+  padding:4rem 1rem;
+  color:#fff;
+  background:linear-gradient(135deg, var(--accent1), var(--accent2));
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%);
+  transform:rotate(-20deg);
+  z-index:0;
+}
+.hero *{position:relative;z-index:1;}
+.hero .btn{
+  display:inline-block;
+  margin-top:1rem;
+  padding:0.75rem 1.5rem;
+  font-weight:600;
+  border:none;
+  border-radius:4px;
+  background:var(--accent2);
+  color:#fff;
+  text-decoration:none;
+  font-size:1rem;
+}
+.hero .btn:hover{background:hsl(164,78%,48%);}
+ul.features{
+  list-style:none;
+  padding:0;
+}
+ul.features li{
+  margin-bottom:1.5rem;
+  padding-left:1.5rem;
+  position:relative;
+}
+ul.features li:before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--accent1);
+  font-weight:bold;
+}
+ol.steps{
+  counter-reset:step;
+  list-style:none;
+  padding:0;
+}
+ol.steps li{
+  counter-increment:step;
+  margin-bottom:1.5rem;
+  padding-left:2rem;
+  position:relative;
+}
+ol.steps li:before{
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:0;
+  background:var(--accent1);
+  color:#fff;
+  width:1.5rem;
+  height:1.5rem;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+}
+blockquote{
+  border-left:4px solid var(--accent1);
+  padding-left:1rem;
+  margin:1rem 0;
+  font-style:italic;
+}
+.faq{
+  border-top:1px solid var(--border);
+  padding-top:1rem;
+}
+.faq dt{
+  font-weight:600;
+  margin-top:1rem;
+}
+.faq dd{
+  margin:0 0 0.5rem 0;
+}
+.final-cta{
+  text-align:center;
+  padding:2rem 1rem;
+  background:var(--accent1);
+  color:#fff;
+}
+.final-cta .btn{
+  background:var(--accent2);
+}
+footer{
+  text-align:center;
+  padding:var(--spacing);
+  font-size:0.9rem;
+  color:var(--text-secondary);
+}
+@media(min-width:600px){
+  .hero{
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero .btn{
+    align-self:flex-start;
+  }
+  main{
+    padding:var(--spacing) 2rem;
+  }
+}
+</style>
+</head>
+<body id="top">
+<header>
+  <a href="#top">Ledgerly</a>
+</header>
+<main>
+  <section class="hero">
+    <h1>Close Your Books in Minutes</h1>
+    <p>AI bookkeeping that eliminates weekend chaos, delivering a 15‑minute month‑end review.</p>
+    <a class="btn" href="#cta">Start Free</a>
+  </section>
+
+  <section id="cta">
+    <h2>Benefits</h2>
+    <ul class="features">
+      <li>
+        <strong>Auto‑reconcile receipts and invoices.</strong><br>
+        Ledgerly scans every file, matches it to invoices, and logs it—no manual entry.
+      </li>
+      <li>
+        <strong>Tax‑ready reports in seconds.</strong><br>
+        Generate quarterly summaries instantly, so tax season becomes a quick check, not a scramble.
+      </li>
+      <li>
+        <strong>Spend weekends designing, not bookkeeping.</strong><br>
+        Focus on creative work while Ledgerly handles the numbers behind the scenes.
+      </li>
+    </ul>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <ol class="steps">
+      <li>Sign up with email—no card needed.</li>
+      <li>Connect your invoicing and bank feeds; Ledgerly auto‑imports receipts.</li>
+      <li>Review the 15‑minute month‑end dashboard; books are balanced, reports ready.</li>
+    </ol>
+  </section>
+
+  <section id="social-proof">
+    <h2>Social Proof</h2>
+    <blockquote>"Ledgerly turned my weekend receipts nightmare into a 15‑minute review." – <em>Name</em>, Solo Designer</blockquote>
+    <blockquote>"Our studio finally has time to design, not data‑entry." – <em>Name</em>, Creative Lead, <em>Company</em></blockquote>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>FAQ</h2>
+    <dl>
+      <dt>Q: How long does onboarding take?</dt>
+      <dd>A: Less than 5 minutes—just sign up, connect feeds, and you’re ready.</dd>
+      <dt>Q: Is my data secure?</dt>
+      <dd>A: Ledgerly uses end‑to‑end encryption and never stores sensitive card info.</dd>
+      <dt>Q: What if I need help?</dt>
+      <dd>A: 24/7 chat support is built into the dashboard.</dd>
+    </dl>
+  </section>
+
+  <section class="final-cta">
+    <h2>Get Ledgerly running in 15 minutes, not a weekend.</h2>
+    <a class="btn" href="#top">Start Free</a>
+  </section>
+</main>
+
+<footer>Rendered by CopyForge</footer>
+</body>
+</html>
