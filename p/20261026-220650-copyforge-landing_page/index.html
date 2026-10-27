@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy in Hours, Brand Consistent</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#f3efe4; --ink:#111; --accent:hsl(325,78%,56%); --accent2:hsl(13,78%,56%); }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:'Space Grotesk',sans-serif; line-height:1.5; }
+  a { color:inherit; text-decoration:none; }
+  .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+  header { border-bottom:4px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:9; }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:18px 24px; max-width:1100px; margin:0 auto; }
+  .logo { font-family:'Archivo Black',sans-serif; font-size:1.15rem; text-transform:uppercase; }
+  .nav-links { display:flex; gap:20px; align-items:center; }
+  .nav-links a { font-weight:700; text-transform:uppercase; font-size:.78rem; letter-spacing:.06em; }
+  .btn { display:inline-block; background:var(--ink); color:var(--paper); font-family:'Archivo Black',sans-serif; padding:14px 26px; font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; border:3px solid var(--ink); box-shadow:5px 5px 0 var(--accent); transition:all .15s; }
+  .btn:hover { transform:translate(-2px,-2px); box-shadow:8px 8px 0 var(--accent); }
+  .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; padding:90px 0; }
+  .hero .label { font-family:'Archivo Black',sans-serif; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+  .hero h1 { font-family:'Archivo Black',sans-serif; font-size:clamp(2.4rem,5.6vw,4.1rem); line-height:.98; text-transform:uppercase; letter-spacing:-.02em; margin-bottom:22px; }
+  .hero p { font-size:1.08rem; max-width:520px; margin-bottom:30px; }
+  .chip { border:3px solid var(--ink); background:#fff; padding:22px; box-shadow:6px 6px 0 var(--ink); }
+  .chip .line { font-size:.9rem; padding:6px 0; border-bottom:1px dashed #c9c2b2; }
+  .chip .line:last-child { border-bottom:0; }
+  .chip .hl { font-weight:700; text-transform:uppercase; }
+  .ticker { border-block:4px solid var(--ink); background:var(--ink); color:var(--paper); overflow:hidden; white-space:nowrap; }
+  .ticker-inner { display:inline-block; padding:10px 0; animation:scroll 22s linear infinite; font-family:'Archivo Black',sans-serif; font-size:.75rem; letter-spacing:.25em; text-transform:uppercase; }
+  @keyframes scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  section { padding:80px 0; border-top:4px solid var(--ink); }
+  .label { font-family:'Archivo Black',sans-serif; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+  h2 { font-family:'Archivo Black',sans-serif; font-size:clamp(1.7rem,3.2vw,2.5rem); text-transform:uppercase; margin-bottom:34px; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .card { border:3px solid var(--ink); background:#fff; padding:26px; box-shadow:6px 6px 0 var(--ink); }
+  .card h3 { font-family:'Archivo Black',sans-serif; font-size:.95rem; text-transform:uppercase; margin-bottom:10px; }
+  .card p { font-size:.92rem; }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .step { border:3px solid var(--ink); background:var(--accent); padding:26px; color:#fff; }
+  .step .num { font-family:'Archivo Black',sans-serif; margin-bottom:10px; }
+  .step h3 { font-family:'Archivo Black',sans-serif; font-size:.95rem; text-transform:uppercase; margin-bottom:8px; }
+  .step p { font-size:.9rem; }
+  .quotes { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+  .quote { border:3px solid var(--ink); background:#fff; padding:24px; font-weight:500; }
+  .quote .who { margin-top:14px; font-family:'Archivo Black',sans-serif; font-size:.68rem; text-transform:uppercase; }
+  details { border-top:3px solid var(--ink); padding:20px 0; }
+  details summary { cursor:pointer; font-family:'Archivo Black',sans-serif; font-size:.95rem; text-transform:uppercase; list-style:none; display:flex; justify-content:space-between; }
+  details summary::after { content:"+"; color:var(--accent); }
+  details[open] summary::after { content:"\2212"; }
+  details p { margin-top:10px; max-width:720px; }
+  .final { text-align:center; padding:100px 0; }
+  .final h2 { font-size:clamp(1.9rem,4.2vw,3.2rem); margin-bottom:14px; }
+  .final p { margin-bottom:28px; }
+  footer { border-top:4px solid var(--ink); padding:28px 0; text-align:center; font-family:'Archivo Black',sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.15em; }
+  @media (max-width:860px) { .hero { grid-template-columns:1fr; } .grid-3,.steps { grid-template-columns:1fr; } .nav-links a:not(.btn) { display:none; } }
+</style>
+</head>
+<body id="top" data-theme="brutalist">
+<header><div class="nav">
+  <div class="logo">Copy In Hours Brand Consist</div>
+  <nav class="nav-links">
+    <a href="#why">Why</a><a href="#how">How</a><a href="#faq">FAQ</a>
+    <a href="#cta" class="btn">Start Free</a>
+  </nav>
+</div></header>
+
+<div class="container">
+  <div class="hero">
+    <div>
+      <div class="label">// copyinhoursbrandconsist</div>
+      <h1>Copy in Hours, Brand Consistent</h1>
+      <p>Instant landing pages, outreach, and email sequences that sound like you.</p>
+      <a href="#cta" class="btn">Start Free</a>
+    </div>
+    <div class="chip">
+      <div class="line hl">copyinhoursbrandconsist</div>
+      <div class="line">Stop wasting hours drafting copy.</div>
+      <div class="line hl">&rarr; Start Free</div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker"><div class="ticker-inner">COPY IN HOURS, BRAND CONSISTENT &nbsp;&bull;&nbsp; COPY IN HOURS, BRAND CONSISTENT &nbsp;&bull;&nbsp;</div></div>
+
+<section id="why"><div class="container">
+  <div class="label">Why</div>
+  <h2>Loud results. Sane pricing.</h2>
+  <div class="grid-3"><div class="card"><h3>Speed: Create pages in hours, not days.</h3><p>&nbsp;</p></div>
+<div class="card"><h3>Brand: Voice stays true, no manual tweaks.</h3><p>&nbsp;</p></div>
+<div class="card"><h3>Fresh: No generic fluff, all tailored.</h3><p>Create copy fast, launch faster.</p></div>
+<div class="card"><h3>3 benefit bullets, each under 12 words.</h3><p>&nbsp;</p></div>
+<div class="card"><h3>Expand each with 1-2 sentences.</h3><p>&nbsp;</p></div></div>
+</div></section>
+
+<section id="how"><div class="container">
+  <div class="label">How</div>
+  <h2>Three steps. No nonsense.</h2>
+  <div class="steps"><div class="step"><div class="num">01</div><h3>Sign up in 30 seconds.</h3><p>&nbsp;</p></div>
+<div class="step"><div class="num">02</div><h3>Upload brand guidelines.</h3><p>&nbsp;</p></div>
+<div class="step"><div class="num">03</div><h3>Receive polished copy ready to publish.</h3><p>&nbsp;</p></div></div>
+</div></section>
+
+<section id="proof"><div class="container">
+  <div class="label">Proof</div>
+  <h2>Receipts.</h2>
+  <div class="quotes"><div class="quote">&ldquo;&quot;[Name], Founder at [Company]&quot; — Copy went live in 2 hours.&rdquo;<div class="who">&mdash;</div></div>
+<div class="quote">&ldquo;&quot;[Name], CEO at [Company]&quot; — Brand voice perfect, no revisions.&rdquo;<div class="who">&mdash;</div></div>
+<div class="quote">&ldquo;&quot;[Name], Growth Lead at [Company]&quot; — Drove 30% lift in sign‑ups.&rdquo;<div class="who">&mdash;</div></div></div>
+</div></section>
+
+<section id="faq"><div class="container">
+  <div class="label">FAQ</div>
+  <h2>Straight answers.</h2>
+  <details><summary>How fast is the turnaround?</summary><p>Within 4 hours of brief.</p></details>
+<details><summary>Can I keep my brand voice?</summary><p>Yes, we preserve tone from your guidelines.</p></details>
+<details><summary>Will it be generic?</summary><p>No, each copy is custom‑crafted.</p></details>
+</div></section>
+
+<section class="final" id="cta"><div class="container">
+  <h2>Stop wasting hours drafting copy.</h2>
+  <p>No contracts. No fluff.</p>
+  <a href="#top" class="btn">Start Free</a>
+</div></section>
+
+<footer>Rendered by CopyForge</footer>
+</body>
+</html>
